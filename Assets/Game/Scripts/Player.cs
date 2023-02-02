@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W))
         {
             Jump();
+
         }else 
         {
             GetComponent<Animator>().SetBool("isJumping", false);

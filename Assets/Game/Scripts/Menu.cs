@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
     }
     public void ChangeLanguage(int language)
     {
+        
         if(language == 0)
         {
             GameController.language = "English";

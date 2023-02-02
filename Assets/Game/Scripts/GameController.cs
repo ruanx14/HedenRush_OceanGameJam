@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Time.timeScale = 0.8f;
+            Time.timeScale = 1f;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {

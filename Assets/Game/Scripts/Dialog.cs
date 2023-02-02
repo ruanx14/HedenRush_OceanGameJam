@@ -63,9 +63,11 @@ public class Dialog : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+
+            /*
             player.GetComponent<Animator>().SetBool("isRunning", true);
             GameController.gameRunning= true;
-            scenarioSpawn.SetActive(true);
+            scenarioSpawn.SetActive(true);*/
         }
     }
 }

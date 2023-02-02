@@ -21,6 +21,7 @@ public class InitialMoves : MonoBehaviour
 
 
     public float returnSpeed;
+    public GameObject catPet;
 
     void Awake()
     {
@@ -48,13 +49,15 @@ public class InitialMoves : MonoBehaviour
         
             yield return new WaitForSeconds(1f);
             player.SetActive(true);
-            
+            catPet.SetActive(true);
             yield return new WaitForSeconds(2f);
+            player.GetComponent<Animator>().SetBool("isIdle", true);
+            yield return new WaitForSeconds(1f);
 
 
-        canvas.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        player.GetComponent<Animator>().SetBool("isIdle",true);    
+
+        //canvas.SetActive(true);
+        //yield return new WaitForSeconds(2f);
         while (Vector3.Distance(ship.transform.position, hidePosition.position) > 0.2f)
         {
             var direction = (hidePosition.position - ship.transform.position).normalized;
@@ -67,6 +70,11 @@ public class InitialMoves : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         Destroy(ship);
+
+        player.GetComponent<Animator>().SetBool("isRunning", true);
+        GameController.gameRunning = true;
+        catPet.GetComponent<Animator>().SetBool("isIdle", false);
+        //scenarioSpawn.SetActive(true);
     }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class InfiniteBackground : MonoBehaviour
 {
 
-    public float xPosition = 19f;
+    public float xPosition = -23f;
     void Update()
     {
 
@@ -17,6 +17,6 @@ public class InfiniteBackground : MonoBehaviour
     }
     void moveTerrain()
     {
-        transform.Translate(Vector3.right * 19f * 2);
+        transform.Translate(Vector3.right * 23f * 2);
     }
 }

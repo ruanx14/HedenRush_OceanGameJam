@@ -5,10 +5,16 @@ using TMPro;
 
 public class Dialog : MonoBehaviour
 {
+    [Header("Lines")]
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed = 0.07f;
     private int indexLines;
+
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject scenarioSpawn;
 
     void Start()
     {
@@ -57,6 +63,9 @@ public class Dialog : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            player.GetComponent<Animator>().SetBool("isRunning", true);
+            GameController.gameRunning= true;
+            scenarioSpawn.SetActive(true);
         }
     }
 }

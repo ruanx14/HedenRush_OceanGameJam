@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{   
+{
     //Jump
+    [Header("Jump Settings")]
     private Rigidbody2D rb;
     [SerializeField]
     private float forceJump;
@@ -24,6 +25,9 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W))
         {
             Jump();
+        }else 
+        {
+            GetComponent<Animator>().SetBool("isJumping", false);
         }
     }
     private void FixedUpdate()
@@ -35,8 +39,8 @@ public class Player : MonoBehaviour
         if (verifyFloor)
         {
             rb.AddForce(Vector2.up * forceJump);
+            GetComponent<Animator>().SetBool("isJumping", true);
         }
-        //animatorComponent.SetBool("Jumping", true);
     }
     /*
      * private IEnumerator Die()

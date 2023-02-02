@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ScenarioSpawner : MonoBehaviour
 {
+    [Header("Spawn Scenario")]
     public GameObject[] prefabScenario;
     public float delayBetween;
     private int indexScenario = 0;
 
 
-    private void Start()
+    void Awake()
     {
         if (GameController.gameRunning)
         {

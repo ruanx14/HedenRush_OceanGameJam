@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class InitialMoves : MonoBehaviour
 {
+    [Header("ShipMoving")]
     public GameObject canvas;
     [SerializeField]
     private GameObject player;
     [SerializeField]
     private GameObject ship;
+
+    [Header("Transforms")]
     [SerializeField]
     private GameObject spotInFront;
-
     private Transform frontPosition;
+    [SerializeField]
     private Transform hidePosition;
 
 
@@ -22,11 +25,12 @@ public class InitialMoves : MonoBehaviour
     void Awake()
     {
         frontPosition = spotInFront.transform;
-        hidePosition = ship.transform;
         StartCoroutine(NaveComing());
     }
     IEnumerator NaveComing()    
     {
+        yield return null;
+        
         yield return new WaitForSeconds(2f);
         while (Vector3.Distance(ship.transform.position, frontPosition.position) > 2)
         {
@@ -41,25 +45,28 @@ public class InitialMoves : MonoBehaviour
         }
             //Debug.Log(ship.GetComponent<SpriteRenderer>());
             Destroy(ship.GetComponent<Animator>());
+        
+            yield return new WaitForSeconds(1f);
             player.SetActive(true);
             
             yield return new WaitForSeconds(2f);
 
-        /*while (Vector3.Distance(ship.transform.position, hidePosition.position) > 2)
+
+        canvas.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        player.GetComponent<Animator>().SetBool("isIdle",true);    
+        while (Vector3.Distance(ship.transform.position, hidePosition.position) > 0.2f)
         {
-            //Debug.Log(Vector3.Distance(ship.transform.position, frontPosition.transform.position));
             var direction = (hidePosition.position - ship.transform.position).normalized;
             ship.transform.position = Vector3.Slerp(
                 ship.transform.position,
                 hidePosition.position + direction,
-                Time.deltaTime * returnSpeed
+                Time.deltaTime * 1f
             );
             yield return null;
-        }*/
-
-        canvas.SetActive(true);
-            
-        
+        }
+        yield return new WaitForSeconds(1f);
+        Destroy(ship);
     }
 
 }

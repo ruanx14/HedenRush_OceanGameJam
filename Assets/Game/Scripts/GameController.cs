@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
-    public static string language;
+    //[Header("Game Settings")]
+    public static string language;  
     public static bool gameRunning = false;
 
     private void FixedUpdate()
@@ -16,7 +16,15 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-      
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Time.timeScale = 0.8f;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Time.timeScale = 5f;
+        }
+
     }
 
 }

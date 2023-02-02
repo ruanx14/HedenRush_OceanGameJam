@@ -8,8 +8,9 @@ public class GameController : MonoBehaviour
 {
 
     public static string language;
+    public static bool gameRunning = false;
 
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -17,4 +18,5 @@ public class GameController : MonoBehaviour
         }
       
     }
+
 }

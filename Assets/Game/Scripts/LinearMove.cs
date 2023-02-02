@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class LinearMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    public Vector3 direction;
 
-    // Update is called once per frame
+    [SerializeField]
+    public float speedTime;
+
+
     void Update()
     {
-        
+        if (GameController.gameRunning)
+        {
+            transform.Translate(direction * (speedTime * Time.deltaTime));
+        }
     }
 }

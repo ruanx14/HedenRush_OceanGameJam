@@ -6,7 +6,7 @@ public class Game : MonoBehaviour
 {
     public void Awake()
     {
-        Debug.Log(GameController.language);
+        //Debug.Log(GameController.language);
     }
 
 

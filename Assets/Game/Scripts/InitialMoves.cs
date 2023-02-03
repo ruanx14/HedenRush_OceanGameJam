@@ -23,6 +23,7 @@ public class InitialMoves : MonoBehaviour
     public float returnSpeed;
     public GameObject catPet;
     public GameObject scenarioSpawn;
+    public GameObject enemySpawn;
 
     void Awake()
     {
@@ -74,6 +75,7 @@ public class InitialMoves : MonoBehaviour
         GameController.gameRunning = true;
         catPet.GetComponent<Animator>().SetBool("isIdle", false);
         scenarioSpawn.SetActive(true);
+        enemySpawn.SetActive(true);
     }
 
 }

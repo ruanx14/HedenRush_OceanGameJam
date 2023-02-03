@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScenarioSpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawn Scenario")]
     public GameObject[] prefabScenario;

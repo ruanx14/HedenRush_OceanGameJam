@@ -6,7 +6,7 @@ public class ScenarioSpawnBackground : MonoBehaviour
 {
     [Header("Spawn Scenario")]
     public GameObject[] prefabScenario;
-    public float delayBetween;
+    public float delayBetween = 9f;
     private int indexScenario = 0;
 
 

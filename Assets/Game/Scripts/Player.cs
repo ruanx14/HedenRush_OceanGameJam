@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
 

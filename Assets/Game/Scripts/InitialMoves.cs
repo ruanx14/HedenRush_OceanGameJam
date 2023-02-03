@@ -36,7 +36,6 @@ public class InitialMoves : MonoBehaviour
         yield return new WaitForSeconds(2f);
         while (Vector3.Distance(ship.transform.position, frontPosition.position) > 2)
         {
-            //Debug.Log(Vector3.Distance(ship.transform.position, frontPosition.transform.position));
             var direction = (frontPosition.transform.position - ship.transform.position).normalized;
             ship.transform.position = Vector3.Slerp(
                 ship.transform.position,
@@ -45,7 +44,6 @@ public class InitialMoves : MonoBehaviour
             );
             yield return null;
         }
-            //Debug.Log(ship.GetComponent<SpriteRenderer>());
             Destroy(ship.GetComponent<Animator>());
         
             yield return new WaitForSeconds(1f);

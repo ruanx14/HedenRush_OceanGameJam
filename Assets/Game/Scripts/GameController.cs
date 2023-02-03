@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     [Header("Game Settings")]
     public static bool gameRunning = false;
+    public static bool canMove = false;
     public GameObject pauseMenu;
 
     void Update()

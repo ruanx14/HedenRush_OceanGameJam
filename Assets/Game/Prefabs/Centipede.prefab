@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0, z: 0}
-  speedTime: 2
+  speedTime: 3
 --- !u!114 &4277252704536208786
 MonoBehaviour:
   m_ObjectHideFlags: 0

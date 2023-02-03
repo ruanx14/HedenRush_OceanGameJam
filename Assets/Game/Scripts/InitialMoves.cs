@@ -73,6 +73,7 @@ public class InitialMoves : MonoBehaviour
 
         player.GetComponent<Animator>().SetBool("isRunning", true);
         GameController.gameRunning = true;
+        GameController.canMove = true;
         catPet.GetComponent<Animator>().SetBool("isIdle", false);
         scenarioSpawn.SetActive(true);
         enemySpawn.SetActive(true);

@@ -1124,6 +1124,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 889015673, guid: 7247bb75fdccb5a4fbee81607c2253de, type: 3}
+      propertyPath: forceJump
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 255857135440741248, guid: 7247bb75fdccb5a4fbee81607c2253de,
         type: 3}
       propertyPath: m_FlipX
@@ -1421,7 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabScenario:
-  - {fileID: 4497650789345049404, guid: ff73a26810c5d884eb4d593e79e22304, type: 3}
+  - {fileID: 4162028749926073703, guid: ff73a26810c5d884eb4d593e79e22304, type: 3}
   - {fileID: 4448527053865327326, guid: 949c5614e629f1c4dae8b9107fe66a77, type: 3}
   - {fileID: 900688973740927645, guid: 2e3040ab9a2e6f64898d812e38976db6, type: 3}
   delayBetween: 8

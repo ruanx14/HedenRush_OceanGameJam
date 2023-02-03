@@ -22,10 +22,11 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
-
+            if (GameController.canMove) { 
+                Jump();
+            }
         }else 
         {
             GetComponent<Animator>().SetBool("isJumping", false);

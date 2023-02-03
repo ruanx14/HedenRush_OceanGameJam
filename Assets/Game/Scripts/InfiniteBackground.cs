@@ -9,10 +9,12 @@ public class InfiniteBackground : MonoBehaviour
     public float xPosition = -23f;
     void Update()
     {
-
-        if (transform.position.x < xPosition)
+        if (GameController.gameRunning)
         {
-            moveTerrain();
+            if (transform.position.x < xPosition)
+            {
+                moveTerrain();
+            }
         }
     }
     void moveTerrain()

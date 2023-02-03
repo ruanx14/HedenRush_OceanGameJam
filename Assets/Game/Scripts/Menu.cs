@@ -7,6 +7,7 @@ using static Unity.VisualScripting.Icons;
 public class Menu : MonoBehaviour
 {
     //public Dropdown m_Dropdown;
+    /*
     public void Awake()
     {
         GameController.language = "English";
@@ -22,7 +23,6 @@ public class Menu : MonoBehaviour
         {
             GameController.language = "Portugues";
         }
-
-
     }
+    */
 }

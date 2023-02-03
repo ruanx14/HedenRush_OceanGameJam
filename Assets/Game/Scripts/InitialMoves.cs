@@ -6,9 +6,7 @@ using UnityEngine;
 public class InitialMoves : MonoBehaviour
 {
     [Header("ShipMoving")]
-    public GameObject canvas;
-    [SerializeField]
-    private GameObject player;
+    //public GameObject canvas; //Old Dialog Canvas
     [SerializeField]
     private GameObject ship;
 
@@ -19,9 +17,12 @@ public class InitialMoves : MonoBehaviour
     [SerializeField]
     private Transform hidePosition;
 
-
+    [Header("ConfigGame")]
+    [SerializeField]
+    private GameObject player;
     public float returnSpeed;
     public GameObject catPet;
+    public GameObject scenarioSpawn;
 
     void Awake()
     {
@@ -74,7 +75,7 @@ public class InitialMoves : MonoBehaviour
         player.GetComponent<Animator>().SetBool("isRunning", true);
         GameController.gameRunning = true;
         catPet.GetComponent<Animator>().SetBool("isIdle", false);
-        //scenarioSpawn.SetActive(true);
+        scenarioSpawn.SetActive(true);
     }
 
 }

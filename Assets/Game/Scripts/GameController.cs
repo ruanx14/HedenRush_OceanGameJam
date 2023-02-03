@@ -6,25 +6,37 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    //[Header("Game Settings")]
-    public static string language;  
+    [Header("Game Settings")]
     public static bool gameRunning = false;
+    public GameObject pauseMenu;
 
-    private void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Time.timeScale = 0;
+            if (Time.timeScale == 0)
+            {
+                UnPauseGame();
+            }
+            else
+            {
+                PauseGame();
+            };
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Time.timeScale = 1f;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Time.timeScale = 5f;
-        }
-
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+    public void UnPauseGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 
 }

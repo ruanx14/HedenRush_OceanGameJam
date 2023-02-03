@@ -13,8 +13,8 @@ public class Dialog : MonoBehaviour
 
     [SerializeField]
     private GameObject player;
-    [SerializeField]
-    private GameObject scenarioSpawn;
+    //[SerializeField]
+    //private GameObject scenarioSpawn;
 
     void Start()
     {

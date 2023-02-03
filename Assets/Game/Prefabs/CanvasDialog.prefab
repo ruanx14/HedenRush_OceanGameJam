@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3176838194366943736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -197,6 +197,8 @@ MonoBehaviour:
   - 'Em 2243, O cientista Fred Naveky, decidiu voltar no tempo '
   - "Afim de conseguir uma salva\xE7\xE3o pra um mundo sem ra\xEDzes"
   textSpeed: 0.07
+  player: {fileID: 0}
+  scenarioSpawn: {fileID: 0}
 --- !u!1 &3176838194735850943
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3176838194735850942
 RectTransform:
   m_ObjectHideFlags: 0

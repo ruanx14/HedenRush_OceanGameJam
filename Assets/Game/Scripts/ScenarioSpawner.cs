@@ -26,6 +26,6 @@ public class ScenarioSpawner : MonoBehaviour
     void SpawnScenario()
     {
         indexScenario = Random.Range(0, prefabScenario.Length);
-        Instantiate(prefabScenario[indexScenario], prefabScenario[indexScenario].transform.position, prefabScenario[indexScenario].transform.rotation);
+        Instantiate(prefabScenario[indexScenario], transform.position, prefabScenario[indexScenario].transform.rotation);
     }
 }

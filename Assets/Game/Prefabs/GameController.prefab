@@ -45,3 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  speedChanger: 0.2
+  speedScenario: 1
+  maxSpeedScenario: 15
+  speedChangerMonster: 0.2
+  speedMonster: 1
+  maxSpeedMonster: 20

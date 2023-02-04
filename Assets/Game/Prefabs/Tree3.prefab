@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0, z: 0}
-  speedTime: 1
+  gameController: {fileID: 7896538103079963199, guid: 33c89d2c7b37ed649b39fec1d7d6e10c,
+    type: 3}
+  speedSelector: scenario
 --- !u!114 &4428766439172735872
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
 
 public class Player : MonoBehaviour
 {
@@ -15,13 +17,29 @@ public class Player : MonoBehaviour
     private LayerMask layerFloor;
     [SerializeField]
     private bool verifyFloor;
+    private Animator playerAnimator;
+    public GameObject gameOverCanvas;
 
+    private float highscore;
+    public float score;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highscoreText;
+
+    public TextMeshProUGUI yourScore;
     void Start()
     {
-      rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+        highscore = PlayerPrefs.GetFloat("highscore", highscore);
+        highscoreText.text = $"Highscore: {Mathf.FloorToInt(PlayerPrefs.GetFloat("highscore"))}";
     }
     void Update()
     {
+        if(GameController.gameRunning)
+        {
+            score += Time.deltaTime * 10;
+            scoreText.text = "Score: " + Mathf.FloorToInt(score).ToString();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (GameController.canMove) { 
@@ -44,24 +62,28 @@ public class Player : MonoBehaviour
             GetComponent<Animator>().SetBool("isJumping", true);
         }
     }
-    /*
-     * private IEnumerator Die()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        _isDead = true;
-        transform.position = _initialDeathPosition;
-
-        while (Vector3.Distance(transform.position, _initialPosition) > returnThreshold)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            var direction = _initialPosition - transform.position;
-            transform.position = Vector3.Slerp(
-                transform.position,
-                transform.position + direction,
-                Time.deltaTime * returnSpeed
-            );
-            yield return null;
+            
+            if (score > highscore)
+            {
+                highscore = score;
+                PlayerPrefs.SetFloat("highscore", highscore);
+            }
+            //endGameAudioSource.Play();
+
+
+            playerAnimator.SetBool("isDead", true);
+            Time.timeScale = 0.6f;
+            GameController.canMove = false;
+            GameController.gameRunning = false;
+            yourScore.text = "Your Score: " + score; 
+
+            gameOverCanvas.SetActive(true);
         }
-        _isDead = false;
 
     }
-    */
-}
+ }
+

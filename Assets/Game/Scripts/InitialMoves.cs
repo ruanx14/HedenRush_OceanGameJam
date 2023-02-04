@@ -6,7 +6,7 @@ using UnityEngine;
 public class InitialMoves : MonoBehaviour
 {
     [Header("ShipMoving")]
-    //public GameObject canvas; //Old Dialog Canvas
+    public GameObject canvasDialog; 
     [SerializeField]
     private GameObject ship;
 
@@ -56,8 +56,8 @@ public class InitialMoves : MonoBehaviour
 
 
 
-        //canvas.SetActive(true);
-        //yield return new WaitForSeconds(2f);
+        canvasDialog.SetActive(true);
+        yield return new WaitForSeconds(2f);
         while (Vector3.Distance(ship.transform.position, hidePosition.position) > 0.2f)
         {
             var direction = (hidePosition.position - ship.transform.position).normalized;
@@ -70,13 +70,14 @@ public class InitialMoves : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         Destroy(ship);
-
+        /*
         player.GetComponent<Animator>().SetBool("isRunning", true);
         GameController.gameRunning = true;
         GameController.canMove = true;
         catPet.GetComponent<Animator>().SetBool("isIdle", false);
         scenarioSpawn.SetActive(true);
         enemySpawn.SetActive(true);
+        */
     }
 
 }

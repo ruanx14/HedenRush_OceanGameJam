@@ -14,7 +14,12 @@ public class Dialog : MonoBehaviour
     [SerializeField]
     private GameObject player;
     //[SerializeField]
-    //private GameObject scenarioSpawn;
+
+    public GameObject catPet;
+    public GameObject scenarioSpawn;
+    public GameObject enemySpawn;
+    public GameObject canvasScore;
+
 
     void Start()
     {
@@ -62,12 +67,14 @@ public class Dialog : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
-
-            /*
+            gameObject.SetActive(false);           
             player.GetComponent<Animator>().SetBool("isRunning", true);
             GameController.gameRunning= true;
-            scenarioSpawn.SetActive(true);*/
+            GameController.canMove = true;
+            catPet.GetComponent<Animator>().SetBool("isIdle", false);
+            scenarioSpawn.SetActive(true);
+            enemySpawn.SetActive(true);
+            canvasScore.SetActive(true);
         }
     }
 }

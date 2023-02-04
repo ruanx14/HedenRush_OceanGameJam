@@ -20,11 +20,12 @@ public class Dialog : MonoBehaviour
     public GameObject enemySpawn;
     public GameObject canvasScore;
 
-
+    public AudioSource soundBackground;
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
+        soundBackground.Play();
     }
 
     // Update is called once per frame

@@ -35,6 +35,7 @@ public class InitialMoves : MonoBehaviour
         yield return null;
         
         yield return new WaitForSeconds(2f);
+        AudioFXManager.Instance.PlaySpaceShipSound();
         while (Vector3.Distance(ship.transform.position, frontPosition.position) > 2)
         {
             var direction = (frontPosition.transform.position - ship.transform.position).normalized;

@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector2.up * forceJump);
             GetComponent<Animator>().SetBool("isJumping", true);
+            AudioFXManager.Instance.PlayJump();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,6 +77,7 @@ public class Player : MonoBehaviour
 
 
             playerAnimator.SetBool("isDead", true);
+            AudioFXManager.Instance.PlayDeath();
             Time.timeScale = 0.6f;
             GameController.canMove = false;
             GameController.gameRunning = false;

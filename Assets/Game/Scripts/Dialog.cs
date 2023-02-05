@@ -18,6 +18,7 @@ public class Dialog : MonoBehaviour
     public GameObject catPet;
     public GameObject scenarioSpawn;
     public GameObject enemySpawn;
+    public GameObject canvasAndroid;
     public GameObject canvasScore;
 
     public AudioSource soundBackground;
@@ -76,6 +77,7 @@ public class Dialog : MonoBehaviour
             scenarioSpawn.SetActive(true);
             enemySpawn.SetActive(true);
             canvasScore.SetActive(true);
+            canvasAndroid.SetActive(true);
         }
     }
 }

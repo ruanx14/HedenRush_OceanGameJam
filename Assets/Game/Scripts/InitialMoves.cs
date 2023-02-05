@@ -57,7 +57,6 @@ public class InitialMoves : MonoBehaviour
 
 
 
-        canvasDialog.SetActive(true);
         yield return new WaitForSeconds(2f);
         while (Vector3.Distance(ship.transform.position, hidePosition.position) > 0.2f)
         {
@@ -69,8 +68,9 @@ public class InitialMoves : MonoBehaviour
             );
             yield return null;
         }
-        yield return new WaitForSeconds(1f);
+        canvasDialog.SetActive(true);
         Destroy(ship);
+
         /*
         player.GetComponent<Animator>().SetBool("isRunning", true);
         GameController.gameRunning = true;

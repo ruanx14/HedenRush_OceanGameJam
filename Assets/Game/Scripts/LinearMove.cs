@@ -13,24 +13,19 @@ public class LinearMove : MonoBehaviour
     [SerializeField]
     GameObject gameController;
     public string speedSelector;
+    public float speedNow;
 
     void Awake()
     {
         gameScript = gameController.GetComponent<GameController>();
-        
+        speedNow = gameScript.speedScenario;
     }
     void Update()
     {
         if (GameController.gameRunning)
         {
-            if (speedSelector == "scenario")
-            {
-                transform.Translate(direction * (gameScript.speedScenario * Time.deltaTime));
-            }
-            else if (speedSelector == "monster")
-            {
-                transform.Translate(direction * (gameScript.speedMonster * Time.deltaTime));
-            }
+                speedNow = gameScript.speedScenario;
+                transform.Translate(direction * (speedNow * Time.deltaTime));
         }
     }
 }

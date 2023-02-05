@@ -14,80 +14,55 @@ public class GameController : MonoBehaviour
     [Header("ScenarioSpeed")]
     public float speedChanger = 0.2f;
     public float speedScenario = 1f;
-    public float maxSpeedScenario = 15f;
+    public float maxSpeedScenario = 20f;
 
-    [Header("MonstersSpeed")]
-    public float speedChangerMonster = 0.2f;
-    public float speedMonster = 1f;
-    public float maxSpeedMonster = 20f;
+    [Header("SpeedScenarioTwo")]
+    public static float speedScenarioTwo = 1f;
 
-    
-    /*
-     [Header("ScenarioTwoSpeed")]
-    public float speedChangerScenarioTwo = 0.2f;
-    public float speedScenarioTwo = 1f;
-    public float maxSpeedScenarioTwo = 15f; 
-    */
-
+    public GameObject joystickMenu;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 0)
-            {
-                UnPauseGame();
-            }
-            else
-            {
-                PauseGame();
-            };
+            PauseController();
         }
         //Speed Controller
         if (gameRunning)
         {
             SpeedController();
+            speedScenarioTwo = speedScenario;
         }
 
     }
 
     public void SpeedController()
     {
-            
              speedScenario = Mathf.Clamp(
                 speedScenario + speedChanger * Time.deltaTime,
                 0,
                 maxSpeedScenario
             );
-
-
-            speedMonster = Mathf.Clamp(
-                speedMonster + speedChangerMonster * Time.deltaTime,
-                0,
-                maxSpeedMonster
-            );
-
-
-
-
-        /*
-            speedScenarioTwo = Mathf.Clamp(
-                speedScenarioTwo + speedChangerScenarioTwo * Time.deltaTime,
-                0,
-                maxSpeedScenarioTwo
-            ); 
-        */
     }
-    public void PauseGame()
+    public void PauseController()
     {
-        Time.timeScale = 0;
-        pauseMenu.SetActive(true);
+        if (gameRunning)
+        {
+            if (Time.timeScale == 0)
+            {
+
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+                joystickMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+                joystickMenu.SetActive(true);
+            }
+        }
     }
-    public void UnPauseGame()
-    {
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-    }
-    public void CloseGame()
+     public void CloseGame()
     {
         Application.Quit();
     }

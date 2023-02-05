@@ -6,8 +6,8 @@ public class MoveLeft : MonoBehaviour
 {
 
     public Vector3 direction;
-    public float speedTime;
-    public float speedMax;
+    public float speedTime = 2;
+    public float speedMax = 35;
 
     // Update is called once per frame
     void Update()

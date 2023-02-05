@@ -19,9 +19,10 @@ public class Player : MonoBehaviour
     private bool verifyFloor;
     private Animator playerAnimator;
     public GameObject gameOverCanvas;
+    public GameObject canvasAndroid;
 
     private float highscore;
-    public float score;
+    public static float score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highscoreText;
 
@@ -42,9 +43,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (GameController.canMove) { 
                 Jump();
-            }
         }else 
         {
             GetComponent<Animator>().SetBool("isJumping", false);
@@ -54,20 +53,23 @@ public class Player : MonoBehaviour
     {
         verifyFloor = Physics2D.Raycast(transform.position, Vector2.down, distanceFloor, layerFloor);
     }
-    private void Jump()
+    public void Jump()
     {
+
         if (verifyFloor)
         {
-            rb.AddForce(Vector2.up * forceJump);
-            GetComponent<Animator>().SetBool("isJumping", true);
-            AudioFXManager.Instance.PlayJump();
+            if (GameController.canMove)
+            {
+                rb.AddForce(Vector2.up * forceJump);
+                GetComponent<Animator>().SetBool("isJumping", true);
+                AudioFXManager.Instance.PlayJump();
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
             if (score > highscore)
             {
                 highscore = score;
@@ -81,9 +83,10 @@ public class Player : MonoBehaviour
             Time.timeScale = 0.6f;
             GameController.canMove = false;
             GameController.gameRunning = false;
-            yourScore.text = "Your Score: " + score; 
-
+            yourScore.text = "Your Score: " + Mathf.FloorToInt(score); 
             gameOverCanvas.SetActive(true);
+            canvasAndroid.SetActive(false);
+
         }
 
     }

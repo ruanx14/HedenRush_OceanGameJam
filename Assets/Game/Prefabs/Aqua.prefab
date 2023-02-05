@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 550c2aa1691e4b34aac9a66313c6a915, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7306353697721244893}
-  - component: {fileID: 237589198823496614}
   - component: {fileID: 6412213440725484112}
+  - component: {fileID: -6860161245733344134}
   m_Layer: 0
   m_Name: Aqua
   m_TagString: Untagged
@@ -119,22 +119,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &237589198823496614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091182040725845069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f46e2b0ec0529af43822df60b27b4317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: -1, y: 0, z: 0}
-  gameController: {fileID: 7896538103079963199, guid: 33c89d2c7b37ed649b39fec1d7d6e10c,
-    type: 3}
-  speedSelector: scenario
 --- !u!114 &6412213440725484112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +131,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cb2679939187143971162bb02c2ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6860161245733344134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091182040725845069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa12f3e59a276d4a807eab8bfdfee14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: -1, y: 0, z: 0}
+  speedChanger: 0.2
+  speedScenarioTwo: 1
+  speedMax: 20
 --- !u!1 &5004216503850052166
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9d97f8eb7ad55e145bd8418ee108dd39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

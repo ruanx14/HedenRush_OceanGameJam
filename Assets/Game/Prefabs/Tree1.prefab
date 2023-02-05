@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4719051823444343631}
   - component: {fileID: 6024584476141827936}
-  - component: {fileID: 8263711867166514219}
   - component: {fileID: -7076522101789130806}
+  - component: {fileID: -8408466742980171951}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6bc43e2c98f99fe42b6f0cdc58297ca0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8263711867166514219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3148193533198189895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f46e2b0ec0529af43822df60b27b4317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: -1, y: 0, z: 0}
-  gameController: {fileID: 7896538103079963199, guid: 33c89d2c7b37ed649b39fec1d7d6e10c,
-    type: 3}
-  speedSelector: scenario
 --- !u!114 &-7076522101789130806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cb2679939187143971162bb02c2ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8408466742980171951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148193533198189895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa12f3e59a276d4a807eab8bfdfee14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: -1, y: 0, z: 0}
+  speedChanger: 0.2
+  speedScenarioTwo: 1
+  speedMax: 20

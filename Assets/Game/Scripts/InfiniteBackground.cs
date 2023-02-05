@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class InfiniteBackground : MonoBehaviour
 {
 
-    public float xPosition = -23f;
+    public float xPosition = -24f;
     void Update()
     {
         if (GameController.gameRunning)
